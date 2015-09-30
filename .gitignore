@@ -11,3 +11,6 @@ bin/*
 # rbenv
 .rbenv-gemsets
 .gems
+
+# Berkshelf
+Berksfile.lock

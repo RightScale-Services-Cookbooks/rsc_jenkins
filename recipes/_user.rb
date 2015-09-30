@@ -25,10 +25,10 @@ file '/mnt/ephemeral/jenkins-slave/.ssh/authorized_keys' do
   owner 'jenkins-slave'
   group 'jenkins-slave'
   mode '0600'
-  content node[:jenkins][:public_key]
+  content node[:rsc_jenkins][:public_key]
 end
 
 jenkins_private_key_credentials 'jenkins-slave' do
   id '82baad23-60db-41d5-984b-9bdf8b497964'
-  private_key node[:jenkins][:private_key]
+  private_key node[:rsc_jenkins][:private_key]
 end

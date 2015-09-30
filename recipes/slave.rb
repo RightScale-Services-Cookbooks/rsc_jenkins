@@ -1,4 +1,4 @@
-node[:jenkins][:slaves].each do |slave|
+node[:rsc_jenkins][:slaves].each do |slave|
   jenkins_ssh_slave "#{slave}" do
     description 'Jenkins Slave Server'
     remote_fs   '/mnt/ephemeral/jenkins-slave'

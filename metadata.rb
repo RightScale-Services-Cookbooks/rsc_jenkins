@@ -19,7 +19,7 @@ attribute "rsc_jenkins/public_key",
   :display_name => "Jenkins Public Key",
   :description  => "This public key will be used by Jenkins slave to allow connections from the master/server",
   :required     => "required",
-  :recipes      => ["rsc_jenkins::_user"]
+  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]
 
 #attribute "rsc_jenkins/user_name",
   #:display_name => "Jenkins User Name",
@@ -43,11 +43,11 @@ attribute "rsc_jenkins/private_key",
   :display_name => "Jenkins Private Key",
   :description  => "This key is used by Jenkins server/master to connect to the slave using SSH.",
   :required     => "required",
-  :recipes      => ["rsc_jenkins::_user"]
+  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]
 
 attribute "rsc_jenkins/slaves",
   :display_name => "Jenkins slaves",
   :description  => "List of Jenkins slave hosts (separated by commas).",
   :required     => "optional",
   :type         => "array",
-  :recipes      => ["rsc_jenkins::slave"]
+  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::slave"]

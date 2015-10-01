@@ -15,39 +15,21 @@ depends 'jenkins', '= 2.4.1'
 
 supports 'ubuntu'
 
-attribute "rsc_jenkins/public_key",
-  :display_name => "Jenkins Public Key",
-  :description  => "This public key will be used by Jenkins slave to allow connections from the master/server",
-  :required     => "required",
-  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]
-
-#attribute "rsc_jenkins/user_name",
-  #:display_name => "Jenkins User Name",
-  #:description  => "Default user's sign in name.",
-  #:required     => "required",
-  #:recipes      => ["rsc_jenkins::_user", "rsc_jenkins::slave"]
-
-#attribute "rsc_jenkins/email",
-  #:display_name => "Jenkins User Email",
-  #:description  => "Default users email address.",
-  #:required     => "required",
-  #:recipes      => ["rsc_jenkins::_user", "rsc_jenkins::slave"]
-
-#attribute "rsc_jenkins/password",
-  #:display_name => "Jenkins Password",
-  #:description  => "Default user's password.",
-  #:required     => "required",
-  #:recipes      => ["rsc_jenkins::_user", "rsc_jenkins::slave"]
-
-attribute "rsc_jenkins/private_key",
-  :display_name => "Jenkins Private Key",
-  :description  => "This key is used by Jenkins server/master to connect to the slave using SSH.",
-  :required     => "required",
-  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]
-
 attribute "rsc_jenkins/slaves",
   :display_name => "Jenkins slaves",
   :description  => "List of Jenkins slave hosts (separated by commas).",
   :required     => "optional",
   :type         => "array",
   :recipes      => ["rsc_jenkins::default", "rsc_jenkins::slave"]
+
+attribute "rsc_jenkins/public_key",
+  :display_name => "Jenkins Public Key",
+  :description  => "This public key will be used by Jenkins slave to allow connections from the master/server",
+  :required     => "required",
+  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]
+
+attribute "rsc_jenkins/private_key",
+  :display_name => "Jenkins Private Key",
+  :description  => "This key is used by Jenkins server/master to connect to the slave using SSH.",
+  :required     => "required",
+  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]

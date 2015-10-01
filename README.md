@@ -1,4 +1,4 @@
-rsc_jenkins Cookbook [![Build Status](https://travis-ci.org/RightScale-Services-Cookbooks/rsc_jenkins.svg?branch=master)](https://travis-ci.org/RightScale-Services-Cookbooks/rsc_jenkins)
+rsc_jenkins Cookbook
 ================
 Configure a Jenkins master and optional slave server(s).
 

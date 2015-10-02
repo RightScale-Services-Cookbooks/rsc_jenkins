@@ -17,7 +17,7 @@ supports 'ubuntu'
 
 attribute "rsc_jenkins/slaves",
   :display_name => "Jenkins slaves",
-  :description  => "List of Jenkins slave hosts (separated by commas).",
+  :description  => "List of Jenkins slave hosts (separated by commas). IE: slave1.example.com,slave2.example.com",
   :required     => "optional",
   :type         => "array",
   :recipes      => ["rsc_jenkins::default", "rsc_jenkins::add_slave_nodes"]

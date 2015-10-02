@@ -18,7 +18,7 @@ Recipes
 | Name                | Description                                |
 |---------------------|--------------------------------------------|
 | `rsc_jenkins::default`  | Installs Jenkins, required software and users.|
-| `rsc_jenkins::slave` | Creates Jenkins slave(s). Run on Jenkins master.|
+| `rsc_jenkins::add_slave_nodes` | Creates Jenkins slave(s). Run on Jenkins master.|
 | `rsc_jenkins::_software` | Installs required Jenkins software.|
 | `rsc_jenkins::_user` | Creates required Jenkins slave user.|
 

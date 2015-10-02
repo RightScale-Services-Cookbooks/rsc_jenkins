@@ -6,10 +6,10 @@ description      'Installs/Configures Jenkins'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 
-recipe 'rsc_jenkins::default'   , 'Installs Jenkins, required software and users.'
-recipe 'rsc_jenkins::slave'     , 'Create Jenkins slaves.'
-recipe 'rsc_jenkins::_software' , 'Install required software.'
-recipe 'rsc_jenkins::_user'     , 'Create slave user and ssh keys'
+recipe 'rsc_jenkins::default'         , 'Installs Jenkins, required software and users.'
+recipe 'rsc_jenkins::add_slave_nodes' , 'Create Jenkins slaves.'
+recipe 'rsc_jenkins::_software'       , 'Install required software.'
+recipe 'rsc_jenkins::_user'           , 'Create slave user and ssh keys'
 
 depends 'jenkins', '= 2.4.1'
 
@@ -20,7 +20,7 @@ attribute "rsc_jenkins/slaves",
   :description  => "List of Jenkins slave hosts (separated by commas).",
   :required     => "optional",
   :type         => "array",
-  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::slave"]
+  :recipes      => ["rsc_jenkins::default", "rsc_jenkins::add_slave_nodes"]
 
 attribute "rsc_jenkins/public_key",
   :display_name => "Jenkins Public Key",

@@ -4,7 +4,7 @@ maintainer_email 'premium@rightscale.com'
 license          'Apache 2.0'
 description      'Installs/Configures Jenkins'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.0'
+version          '0.1.1'
 
 recipe 'rsc_jenkins::default'         , 'Installs Jenkins, required software and users.'
 recipe 'rsc_jenkins::add_slave_nodes' , 'Create Jenkins slaves.'

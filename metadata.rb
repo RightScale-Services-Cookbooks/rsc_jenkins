@@ -33,3 +33,15 @@ attribute "rsc_jenkins/private_key",
   :description  => "This key is used by Jenkins server/master to connect to the slave using SSH.",
   :required     => "required",
   :recipes      => ["rsc_jenkins::default", "rsc_jenkins::_user"]
+
+attribute "rsc_jenkins/war_url",
+  :display_name => "Jenkins WAR file URL to download and install.",
+  :description  => "URL of Jenkins WAR file to install.",
+  :required     => "required",
+  :recipes      => ["rsc_jenkins::default"]
+
+attribute "rsc_jenkins/checksum",
+  :display_name => "MD5 sum",
+  :description  => "MD5 checksum of Jenkins WAR file to download.",
+  :required     => "required",
+  :recipes      => ["rsc_jenkins::default"]
